@@ -1,3 +1,5 @@
 venv
 student_health_monitor.h5
 student_health_monitor.keras
+*.keras
+*.h5

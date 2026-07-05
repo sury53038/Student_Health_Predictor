@@ -1,0 +1,67 @@
+<p><h5>
+    Student Data Form
+</h5></p>
+
+<form [formGroup] = "studentdata" (ngSubmit) = "SubmitForm()">
+    <input type="number" formControlName = "sleep_duration">
+    <input type="number" formControlName = "heart_rate">
+    <input type="number" formControlName = "bmi">
+    <input type="number" formControlName = "calorie_expenditure">
+    <input type="number" formControlName = "step_count">
+    <input type="number" formControlName = "exercise_duration">
+    <input type="number" formControlName = "water_intake">
+
+    <label>Diet Type</label>
+    <select formControlName="diet_type">Diet Type</select>
+        <option value="">Select</option>
+        @for diet_type of diet_type; track diet_type.value{
+            <option [value] = "diet_type.value">
+                {{diet_type.label}}
+            </option>
+        }
+    
+    <label>Stress Level</label>
+    <select formControlName = "stress_level">Stress Level</select>
+        <option value="">Select</option>
+        @for stress_level of stress_level; track stress_level.value{
+            <option [value] = "stress_level.value">
+                {{stress_level.label}}
+            </option>
+        }
+
+
+    <label>Sleep Quality</label>
+    <select formControlName="sleep_quality">Sleep Quality</select>
+        <option value="">Select</option>
+        @for sleep_quality of sleep_quality; track sleep_quality.label{
+            <option [value] = "sleep_quality.value">{{sleep_quality.label}}</option>
+        }
+
+    <label>Physical Activiy</label>
+    <select formControlName="physical_activity_level">
+        <option value="">Select</option>
+        @for activity of physical_activity_level; track activity.label{
+            <option [value] = "activity.value">{{activity.label}}</option>
+        }
+    </select>
+
+    <label>Smoke_Alcohol</label>
+    <select formControlName="smoke_alcohol">
+        <option value="">Select</option>
+        @for smoke_alcohol of addictionLevel; track smoke_alcohol.value{
+            <option [value] = "smoke_alcohol.value">{{smoke_alcohol.label}}</option>
+        }
+    </select>
+
+    <label>Gender</label>
+    <select formControlName="gender">
+        <option value="">Select Gender</option>
+        @for gender of gernderOptions; track gender.value{
+            <option [value] ="gender.value">{{gender.label}}</option>
+        }
+    </select>
+
+    
+    <button type="submit">Predict</button>
+
+</form>
